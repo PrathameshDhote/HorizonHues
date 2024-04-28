@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon Hues - Explore the World</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<style>
+/* CSS styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('https://nammatrip.in/wp-content/uploads/2023/05/banner-1.webp'); 
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 175px;
+    text-align: center;
+}
+
+nav {
+    background-color: #3f2311;
+    color: #fff;
+    text-align: right;
+    padding: 03 px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-brand {
+    padding: 05px 40px;
+    font-size: 39px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;  
+    padding: 05px 20px;
+    font-size: 18px; 
+}
+
+nav a:hover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #cb3f02;
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+nav a:hover {
+    color: #cb3f02;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3f2311;
+    min-width: 150px;
+    z-index: 1;
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s; 
+}
+
+.dropdown-content a:hover {
+    background-color: none; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+section {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px 10px;
+    font-family: 'Times New Roman', serif; 
+    font-size: 75px; 
+    color:rgb(230, 234, 241);
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+h2 {
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 25px;
+    animation: fadeIn 1s ease forwards; 
+}
+
+h3 {
+    text-align: right;
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 45px; 
+    animation: fadeIn 1s ease forwards;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 300px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-decoration: none;
+}
+
+.card-content h2 {
+    margin-top: 0;
+    color:black;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.newsletter {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.newsletter input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter input[type="submit"]:hover {
+    background-color: #555;
+}
+.dropdown-symbol {
+        font-size: 10px; 
+        vertical-align: middle;
+        padding-left: 5px; 
+}
+/* Add this CSS for hamburger menu */
+
+
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="HorizonHues.html" class="nav-brand">Horizon Hues</a>
+    <a href="HorizonHues.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <div class="dropdown">
+        <a href="destinations.html" class="dropbtn">Destinations<span class="dropdown-symbol">      v</span></a>
+
+        <div class="dropdown-content">
+            <a href="india.html">INDIA</a>
+            <a href="aus.html">AUSTRALIA</a>
+            <a href="usa.html">UNITED STATES OF AMERICA</a>
+            <a href="sl.html">SRI-LANKA</a>
+            <a href="jp.html">JAPAN</a>
+            <a href="uk.html">UNITED KINGDOM</a>
+            <a href="chn.html">CHINA</a>
+            <a href="ger.html">GERMANY</a>
+            <a href="rus.html">RUSSIA</a>
+        </div>
+    </div>
+    <a href="gallery.html">Gallery</a>
+    <a href="login.html">Log in</a>
+</nav>
+
+
+<header>
+    <div class="header-content">
+        <h1 class="animate-heading">Horizon Hues</h1>
+        <h3>Explore.Dream.Wonder.</h3>
+        <h2>“Traveling – it leaves you speechless, then turns you into a storyteller.”<br> – Ibn Battuta</h2>
+    </div>
+</header>
+
+<section>
+    <h1 style="color:black;">Welcome to Horizon Hues!</h1>
+    <div class="container">
+        <div class="card">
+            <a href="destinations.html"> 
+                <img src="https://th.bing.com/th/id/OIP.aTDCMwxaghXF27NrMDxTegHaFj?rs=1&pid=ImgDetMain" alt="Destinations">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">DESTINATIONS</h2>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="blog.html"> 
+                <img src="https://th.bing.com/th/id/OIP.a5YOm_1N-oe-O025Jw4PTQHaE8?rs=1&pid=ImgDetMain" alt="Blog">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">BLOG</h2>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="about.html"> 
+                <img src="https://th.bing.com/th/id/OIP.k6ExvZ5F9RqXcTxcKZsXUgHaE5?rs=1&pid=ImgDetMain" alt="About">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">ABOUT</h2>
+                </div>
+            </a>
+        </div>
+        
+    </div>
+</section>
+<div class="newsletter">
+    <h2>Newsletter</h2>
+    <form action="#" method="post">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="submit" value="Subscribe">
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Horizon Hues. All rights reserved.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.querySelector(".newsletter-form");
+        form.addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            
+            const email = form.querySelector("input[type='email']").value;
+            if (email) {
+                alert("Thank you for subscribing! You will receive our newsletter.");
+                form.reset(); 
+            } else {
+                alert("Please enter a valid email address.");
+            }
+        });
+    });
+</script>
+
+
+</body>
+</html>

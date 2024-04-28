@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon Hues - Explore the World</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('https://www.tripsavvy.com/thmb/8KDckRC74VRPc4kwfF2x7BPlMU4=/3072x2304/filters:fill(auto,1)/560WEB-43b14c0c09734ba68c0a4a3cc09de1bc.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 125px;
+    text-align: center;
+}
+
+nav {
+    background-color: #042803;
+    color: #fff;
+    text-align: right;
+    padding: 03 px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-brand {
+    padding: 05px 40px;
+    font-size: 39px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 05px 10px;
+    font-size: 18px; 
+    text-align: end;
+}
+
+nav a:hover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #cb3f02;
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+nav a:hover {
+    color: #cb3f02;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #042803;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+section {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px 10px;
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 75px; 
+    color:rgb(230, 234, 241);
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+h2 {
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 25px; 
+    animation: fadeIn 1s ease forwards;
+}
+
+h3 {
+    text-align: left;
+    margin-left: 5%;
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 35px; 
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h2 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.share-memories-btn {
+    background-color: #2aada9;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.share-memories-btn:hover {
+    background-color: #cb3f02;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.share-memories-btn h3 {
+    margin-top: 0;
+}
+
+.share-memories-btn p {
+    margin-bottom: 10px;
+}
+
+.write-blog-link {
+    display: inline-block;
+    background-color: #cb3f02;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.write-blog-link:hover {
+    background-color: #3f2311;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="HorizonHues.html" class="nav-brand">Horizon Hues</a>
+    <a href="HorizonHues.html">Home</a>
+    <a href="#">Blog</a>
+    <div class="dropdown">
+        <a href="destinations.html" class="dropbtn">Destinations</a>
+        <div class="dropdown-content">
+            <a href="#card1">INDIA</a>
+            <a href="#card2">AUSTRALIA</a>
+            <a href="#card3">UNITED STATES OF AMERICA</a>
+            <a href="#card1">SRI-LANKA</a>
+            <a href="#card2">JAPAN</a>
+            <a href="#card3">UNITED KINGDOM</a>
+            <a href="#card1">CHINA</a>
+            <a href="#card2">GERMANY</a>
+            <a href="#card3">RUSSIA</a>
+        </div>
+    </div>
+    
+    <a href="gallery.html">Gallery</a>
+    
+    <a href="#">Contact</a>
+</nav>
+
+<header>
+    <div class="header-content">
+        <h1 class="animate-heading">BLOG</h1>
+        <h2>Recent Travel Blog Post</h2>
+    </div>
+    <div class="penci-ctslide-bg" data-jarallax="" data-video-src="https://www.youtube.com/embed/T4NT9_XDHkU?autoplay=1&amp;controls=0&amp;modestbranding=1&amp;loop=1&amp;mute=1&amp;enablejsapi=1&amp;origin=https://theworldtravelguy.com&amp;widgetid=1" style="transform: translate3d(0px, 0px, 0px);" data-jarallax-original-styles="transform: translate3d(0px, 0px, 0px);">
+        <iframe id="VideoWorker-0" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" title="The World Travel Guy - Website Background" width="640" height="360" src="https://www.youtube.com/embed/T4NT9_XDHkU?autohide=1&amp;rel=0&amp;autoplay=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;controls=0&amp;showinfo=0&amp;disablekb=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Ftheworldtravelguy.com&amp;widgetid=1" style="position: absolute; inset: 0px; width: 100%; height: 100%; max-width: none; max-height: none; z-index: -1;"></iframe>
+    </div>
+</header>
+
+<section>
+    <div><h3 style="color:black;">Blog Post</h3></div>
+    <div class="container">
+        <div class="card">
+            <a href="blog1.html"> 
+                <img src="https://th.bing.com/th/id/R.28375bfc908c3b465be4bdf53293308a?rik=WDE2H30HP5VT3w&riu=http%3a%2f%2f4.bp.blogspot.com%2f-8vRT3ILpMpQ%2fURoF53WpFvI%2fAAAAAAAAApE%2f3l0Rjh1dGV4%2fs1600%2fMaldives%2bIsland%2bTop%2bResorts.jpg&ehk=O42OZMF6w6oa7zEU3EgQNUHaYUENMaou8qdIvGm7lo0%3d&risl=&pid=ImgRaw&r=0" alt="Destinations">
+                
+            </a>
+            <div class="card-content">
+                <h3 style="font-family: 'Times New Roman', serif; text-align: center; text-decoration: none;">Dhigurah Island Travel Guide For Maldives</h3>
+            </div>
+            <p>Dhigurah island is probably the most beautiful island you’ve never heard of in the Maldives. It’s a local island without the fancy overwater resorts that are famous in Maldives, but instead it has a long and wonderful white sand beach.</p>
+        </div>
+        <div class="card">
+            <a href="blog.html"> 
+                <img src="https://th.bing.com/th/id/R.f47a189f7f41768d289a55d7d74143b3?rik=DyM1AESpkCM2oQ&riu=http%3a%2f%2fthatadventurer.co.uk%2fwp-content%2fuploads%2f2017%2f06%2fantelope-1024x1024.jpg&ehk=UgJ2Fie3N4xkoAxUe7Q%2bUHH9qVwNbv%2fk8gF%2bcpqkV8U%3d&risl=&pid=ImgRaw&r=0" alt="Blog">
+            </a>
+            <div class="card-content">
+                <h3 style="font-family: 'Times New Roman', serif; text-align: center; text-decoration: none;">Lower Antelope Canyon Tour Review & Photos</h3>
+            </div>
+            <p>We recently went to Arizona and tried all of the Antelope Canyon tours, including the two main sections: Upper Canyon and Lower Canyon. This is our complete review from the Lower Antelope Canyon.</p>
+        </div>
+        <div class="card">
+            <a href="about.html"> 
+                <img src="https://th.bing.com/th/id/OIP.k6ExvZ5F9RqXcTxcKZsXUgHaE5?rs=1&pid=ImgDetMain" alt="About">
+            </a>
+            <div class="card-content">
+                <h3 style="font-family: 'Times New Roman', serif; text-align: center; text-decoration: none;">10 Best Hikes In Aruba: Family Friendly Trails</h3>
+            </div>
+            <p>Even though Aruba is mainly known for its beaches and other fun activities, there are also some easy and family friendly hikes in Aruba where you can see natural pools, rock arches, and desert landscapes at the Arikok National Park.</p>
+        </div>
+    </div>
+</section>
+<section id="share-memories" class="share-memories-btn">
+    <div>
+        <h3 style="color:black;">Share Your Memories</h3>
+    </div>
+    <div class="container">
+        <p>Share your travel experiences and adventures with the world. Click below to write your own blog!</p>
+        <a href="writing_blog.html" class="write-blog-link">Write Your Blog</a>
+    </div>
+</section>
+
+
+
+<footer>
+    <p>&copy; 2024 Horizon Hues. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Write Your Blog</title>
+<style>
+/* CSS styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('images/image.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Ensure the background image remains fixed */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Add opacity to improve readability */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+}
+
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+textarea {
+    min-height: 200px;
+}
+
+input[type="submit"] {
+    background-color: #cb3f02;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #3f2311;
+}
+
+h2 {
+    color: #cb3f02;
+}
+
+h3 {
+    color: #3f2311;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.image-upload {
+    margin-top: 20px;
+}
+
+.image-preview {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Write Your Blog</h2>
+    <form id="blog-form">
+        <input type="text" id="blog-title" placeholder="Enter blog title" required>
+        <textarea id="blog-content" placeholder="Write your blog here" required></textarea>
+        <div class="options">
+            <h3>Options:</h3>
+            <label for="bold">Bold</label>
+            <input type="checkbox" id="bold" class="option bold">
+            <label for="italic">Italic</label>
+            <input type="checkbox" id="italic" class="option italic">
+        </div>
+        <div class="image-upload">
+            <label for="photo-upload">Upload Image:</label>
+            <input type="file" id="photo-upload" accept="image/*">
+            <img id="image-preview" class="image-preview" src="#" alt="Image Preview">
+        </div>
+        <input type="submit" value="Publish Blog">
+    </form>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const blogForm = document.getElementById("blog-form");
+
+    blogForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        // Get form data
+        const title = document.getElementById("blog-title").value;
+        const content = document.getElementById("blog-content").value;
+
+        // Store form data in local storage
+        localStorage.setItem("blogTitle", title);
+        localStorage.setItem("blogContent", content);
+
+        // Redirect to main page
+        window.location.href = "blog.html";
+    });
+});
+</script>
+
+</body>
+</html>

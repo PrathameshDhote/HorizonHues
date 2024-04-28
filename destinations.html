@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon Hues - Destinations</title>
+<style>
+/* CSS styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-image: url('https://th.bing.com/th/id/R.da062ad1023361619e971092889cb6aa?rik=dR8D71n%2fSUFgTg&riu=http%3a%2f%2fstatic5.depositphotos.com%2f1035048%2f471%2fi%2f950%2fdepositphotos_4714234-stock-photo-collage-world-map.jpg&ehk=uZDN0qeD1UXe7egaHk3Leow6AaQL2lO9ufzXpe5x0CM%3d&risl=&pid=ImgRaw&r=0'); 
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 175px;
+    text-align: center;
+}
+nav {
+    background-color: #3f2311;
+    color: #fff;
+    text-align: right;
+    padding: 03 px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.nav-brand {
+    padding: 05px 40px;
+    font-size: 39px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;  
+    padding: 05px 20px 0.5rem;
+    font-size: 18px; 
+}
+
+nav a:hover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #cb3f02;
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+nav a:hover {
+    color: #cb3f02;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3f2311;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 75px; 
+    padding: 5px 5px;
+    color:rgb(0, 0, 0);
+    position: relative;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 350px; /* Adjusted width for the cards */
+    margin: 40px;
+    border: 3px solid #ccc;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h2 {
+    margin-top: 0;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.view-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.view-more-btn:hover {
+    background-color: #555;
+}
+.dropdown-symbol {
+        font-size: 10px; 
+        vertical-align: middle;
+        padding-left: 5px; 
+}
+</style>
+</head>
+<body>
+
+    <nav>
+        <a href="HorizonHues.html" class="nav-brand">Horizon Hues</a>
+        <a href="HorizonHues.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <div class="dropdown">
+            <a href="destinations.html" class="dropbtn">Destinations<span class="dropdown-symbol">      v</span></a>
+            <div class="dropdown-content">
+                <a href="india.html">INDIA</a>
+                <a href="aus.html">AUSTRALIA</a>
+                <a href="usa.html">UNITED STATES OF AMERICA</a>
+                <a href="sl.html">SRI-LANKA</a>
+                <a href="jp.html">JAPAN</a>
+                <a href="uk.html">UNITED KINGDOM</a>
+                <a href="chn.html">CHINA</a>
+                <a href="ger.html">GERMANY</a>
+                <a href="rus.html">RUSSIA</a>
+            </div>
+        </div>
+        
+        <a href="gallery.html">Gallery</a>
+        
+        <a href="#">Contact</a>
+    </nav>
+
+<header>
+    <div class="header-content">
+    </div>
+</header>
+<h1 class="animate-heading">Destinations</h1>
+<section>
+    <div class="container">
+        <div class="card">
+            <a href="india.html"> 
+                <img src="https://thumbs.dreamstime.com/z/famous-places-india-collage-photos-180834557.jpg" alt="Destinations">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">INDIA</h2>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="aus.html"> 
+                <img src="https://i0.wp.com/travelogueofkuntala.com/wp-content/uploads/2022/06/australia.jpg?fit=1200%2C675&ssl=1" alt="Destinations">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">AUSTRALIA</h2>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="usa.html"> 
+                <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/new-york-city-famous-landmarks-picture-collage-usa-samuel-borges.jpg" alt="Destinations">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">UNITED STATES OF AMERICA</h2>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="sl.html"> 
+                <img src="https://c8.alamy.com/comp/KHFRK2/sri-lanka-travel-collage-KHFRK2.jpg" alt="Destinations">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">SRI-LANKA</h2>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="jp.html"> 
+                <img src="https://thumbs.dreamstime.com/z/tokyo-postcard-collage-tokyo-postcard-collage-japan-city-places-collection-112201289.jpg" alt="Destinations">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">JAPAN</h2>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="uk.html"> 
+                <img src="https://th.bing.com/th/id/OIP.rWVbbzSDaebVV1rjEkl1lAHaHa?rs=1&pid=ImgDetMain" alt="Destinations">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">UNITED KINGDOM</h2>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="chn.html"> 
+                <img src="https://previews.agefotostock.com/previewimage/medibigoff/e93e632463f567b7b47ab8a907d34285/esy-054653632.jpg" alt="Destinations">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">CHINA</h2>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="ger.html"> 
+                <img src="https://thumbs.dreamstime.com/b/collage-beautiful-dresden-germany-saxony-42988488.jpg" alt="Destinations">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">GERMANY</h2>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="rus.html"> 
+                <img src="https://thumbs.dreamstime.com/b/historical-attractions-st-petersburg-russia-collage-city-night-45512168.jpg" alt="Destinations">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">RUSSIA</h2>
+                </div>
+            </a>
+        </div>
+    </div>
+    <button class="view-more-btn" onclick="window.location.href='#'">View More</button>
+</section>
+
+<footer>
+    <p>&copy; 2024 Horizon Hues. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

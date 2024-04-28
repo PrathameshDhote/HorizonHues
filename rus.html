@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon Hues - Explore the World</title>
+<style>
+/* CSS styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('https://media.istockphoto.com/id/477372378/photo/travel-collage-world-images.jpg?s=612x612&w=0&k=20&c=f58flJv08W5A9NAn2t4XFmd8Z_T2UwNc8dPdK-xkxc8='); 
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 250px;
+    text-align: center;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    font-size: 72px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #090909;
+    font-family: 'Comic Sans MS', cursive;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    text-align: right;
+    padding: 03px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-brand {
+    padding: 05px 40px;
+    font-size: 39px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 05px 20px;
+    font-size: 18px; 
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #cb3f02; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+section {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding: 2px 10px;
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 75px; 
+    color:rgb(230, 234, 241);
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+h2 {
+    text-align: right;
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 35px; 
+}
+
+h3 {
+    text-align: right;
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 45px; 
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    width: 350px; 
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.card-content a {
+    color: #333; 
+    text-decoration: none;
+    display: block;
+    text-align: center; 
+    font-weight: bold; 
+}
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.dropdown-symbol {
+        font-size: 10px; 
+        vertical-align: middle;
+        padding-left: 5px; 
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="HorizonHues.html" class="nav-brand">Horizon Hues</a>
+    <a href="HorizonHues.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <div class="dropdown">
+        <a href="destinations.html" class="dropbtn">Destinations<span class="dropdown-symbol">      v</span></a>
+        <div class="dropdown-content">
+            <a href="india.html">INDIA</a>
+            <a href="aus.html">AUSTRALIA</a>
+            <a href="usa.html">UNITED STATES OF AMERICA</a>
+            <a href="sl.html">SRI-LANKA</a>
+            <a href="jp.html">JAPAN</a>
+            <a href="uk.html">UNITED KINGDOM</a>
+            <a href="chn.html">CHINA</a>
+            <a href="ger.html">GERMANY</a>
+            <a href="rus.html">RUSSIA</a>
+        </div>
+    </div>
+    
+    <a href="gallery.html">Gallery</a>
+  
+    <a href="#">Contact</a>
+</nav>
+
+<header>
+    <div class="header-content">
+    </div>
+</header>
+
+<section>
+    <h1 class="animate-heading"; style="color:rgb(236, 188, 14);">AUSTRALIA</h1>
+    <h1 style="color:black;">A guest is akin to God</h1>
+    <section>
+        <h2 style="color:black; text-align: center;">Overview</h2>
+        <p>Australia is the only country in the world that covers an entire continent. It is one of the largest countries on Earth. Although it is rich in natural resources and has a lot of fertile land, more than one-third of Australia is desert.</p>
+
+        Most Australian cities and farms are located in the southwest and southeast, where the climate is more comfortable. There are dense rain forests in the northeast. The famous outback (remote rural areas) contains the country's largest deserts, where there are scorching temperatures, little water, and almost no vegetation.
+
+        Running around the eastern and southeastern edge of Australia is the Great Dividing Range. This 2,300-mile (3,700-kilometer) stretch of mountain sends water down into Australia's most important rivers and the Great Artesian Basin, the largest groundwater source in the world.
+    </section>
+    <h2 style="color:black; text-align: center;">Explore More</h2>
+    <div class="container">
+        <div class="card">
+            <a href="destinations.html"> 
+                <img src="https://i.pinimg.com/originals/ab/1b/01/ab1b01bd029e6b222a1353911fa38252.jpg" alt="Destinations">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">SYDNEY</h2>
+                    <a href="destinations.html">View more</a>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="blog.html"> 
+                <img src="https://st2.depositphotos.com/1035886/6028/i/950/depositphotos_60280661-stock-photo-melbourne-collage.jpg" alt="Blog">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">MELBOURNE</h2>
+                    <a href="blog.html">View more</a>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="about.html"> 
+                <img src="https://www.travelanddestinations.com/wp-content/uploads/2019/08/Aerial-view-the-Gold-Coast.jpg" alt="About">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">GOLD COAST</h2>
+                    <a href="about.html">View more</a>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="about.html"> 
+                <img src="https://i.pinimg.com/originals/69/d6/fb/69d6fbcc790121f4be00b4e4a863df15.png" alt="About">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">BRISBANE</h2>
+                    <a href="about.html">View more</a>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="about.html"> 
+                <img src="https://www.trawell.in/blog/wp-content/uploads/2017/02/Kerala_Main-730x410.jpg" alt="About">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">PERTH</h2>
+                    <a href="about.html">View more</a>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="about.html"> 
+                <img src="https://i.pinimg.com/originals/c5/00/e5/c500e52c309457dd4d8cdb7c6215e4b3.jpg" alt="About">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">ADELAIDE</h2>
+                    <a href="about.html">View more</a>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="about.html"> 
+                <img src="https://indiamap.com/images/uttarakhand_banner01.webp" alt="About">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">HOBART</h2>
+                    <a href="about.html">View more</a>
+                </div>
+            </a>
+        </div>
+        <div class="card">
+            <a href="about.html"> 
+                <img src="https://www.sharpholidays.in/blog/wp-content/uploads/2018/04/kasol.jpg" alt="About">
+                <div class="card-content">
+                    <h2 style="font-family: 'Times New Roman', serif;">PHILLIP ISLAND</h2>
+                    <a href="about.html">View more</a>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 Horizon Hues. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login/Register</title>
+        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/css/intlTelInput.css"/>
+<script src="https://cdn.tutorialjinni.com/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+        <link rel="icon" href="./Images/Restaurants/download.png" type="image/icon type">
+    </head>
+<body>
+  <header>
+</header>
+    
+  <div class="container">
+      <div class="loginbg">
+          <div class="box signin">
+              <h2>Already Have an Account ?</h2>
+              <button class="signinbtn">Sign in</button>
+          </div>
+          <div class="box signup">
+            <h2>Dont Have an Account ?</h2>
+            <button class="signupbtn">Sign up</button>
+          </div>
+      </div>
+      <div class="formbx">
+        <div class="form signinform">
+            <form>
+                <h2>Horizon Hues</h2>
+                <h3>Sign In</h3>
+                <input type="text" id="login_email" placeholder="E-mail">
+                <input type="password" id="login_password" placeholder="Password">
+               
+                 <button type="button" id="login" name="login" class="btn btn-success">Login</button>
+            
+                <a href="#" class="forgot">Forgot password?</a>
+            </form>
+        </div>
+        <div class="form signupform">
+            <form>
+                <h3>Sign up</h3>
+                <input type="text" id="name"placeholder="Enter Your Name">
+                <input type="text" id="email" placeholder="Email">
+                <input name="phone" type="text" id="phone"> 
+                
+                <input type="password" id="password" placeholder="Password">
+                <input type="password" id="Confirmpassword" placeholder="Confirm password">
+                <button type="button" id="register" name="register" class="btn btn-success" >Sign Up</button>
+            </form>
+        </div>
+      </div>
+      </div>
+<script>
+    const signinbtn = document.querySelector('.signinbtn');
+    const signupbtn = document.querySelector('.signupbtn');
+    const formbx = document.querySelector('.formbx'); 
+    const body = document.querySelector('body')
+
+    signupbtn.onclick = function(){
+        formbx.classList.add('active')
+        body.classList.add('active')
+    }
+    signinbtn.onclick = function(){
+        formbx.classList.remove('active')
+        body.classList.remove('active')
+    }
+    var input = document.querySelector("#phone");
+window.intlTelInput(input, {
+  separateDialCode: true
+});
+    </script>
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyAfBPm5XfuF7meuOhiWV0nHsWOJcB_nyMo",
+  authDomain: "horizon-hues.firebaseapp.com",
+  databaseURL: "https://horizon-hues-default-rtdb.firebaseio.com",
+  projectId: "horizon-hues",
+  storageBucket: "horizon-hues.appspot.com",
+  messagingSenderId: "815149525944",
+  appId: "1:815149525944:web:bd141b216d0fdc5b207d4d",
+  measurementId: "G-EKJMR8PVP4"
+};
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth= getAuth();
+    
+    console.log(app);
+    document.getElementById("register").addEventListener("click", function() {
+		  var email =  document.getElementById("email").value;
+          var Name =  document.getElementById("name").value;
+          var phone =  document.getElementById("phone").value;
+		  var password = document.getElementById("password").value;
+          var confirm_pass=document.getElementById("Confirmpassword").value;
+
+          if(password!=confirm_pass){
+            alert("Enter the Confirm Password same as Password")
+          }
+		  //For new registration
+		  createUserWithEmailAndPassword(auth,email, password)
+		  .then((userCredential) => {
+		    // Signed in 
+		    const user = userCredential.user;
+		    console.log(user);
+		    alert("Registration successfully!!");
+        })
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    // ..
+		    console.log(errorMessage);
+		    alert(error);
+		  });		  		  
+	  });
+    document.getElementById("login").addEventListener("click", function() {
+		  var email =  document.getElementById("login_email").value;
+		  var password = document.getElementById("login_password").value;
+
+		  signInWithEmailAndPassword(auth, email, password)
+		  .then((userCredential) => {
+		    // Signed in 
+		    const user = userCredential.user;
+		    console.log(user);
+		    alert(user.email+" Login successfully!!!");
+		    document.getElementById('logout').style.display = 'block';
+		    // ...
+		  })
+		  .catch((error) => {
+		    const errorCode = error.code;
+		    const errorMessage = error.message;
+		    console.log(errorMessage);
+		    alert(errorMessage);
+		  });		  		  
+	  }); 
+  </script>     
+</body>
+</html>

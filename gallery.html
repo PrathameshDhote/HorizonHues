@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon Hues - Explore the World</title>
+<style>
+/* CSS styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 150px;
+    text-align: center;
+}
+
+nav {
+    background-color: #3f2311;
+    color: #fff;
+    text-align: right;
+    padding: 03 px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-brand {
+    padding: 05px 40px;
+    font-size: 39px;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;  
+    padding: 05px 20px;
+    font-size: 18px; 
+}
+
+nav a:hover::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #cb3f02;
+    transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+nav a:hover {
+    color: #cb3f02;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #3f2311;
+    min-width: 150px;
+    z-index: 1;
+    border-radius: 5px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 14px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s; 
+}
+
+.dropdown-content a:hover {
+    background-color: none; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+section {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px 10px;
+    font-family: 'Times New Roman', serif; 
+    font-size: 65px; 
+    color:rgb(230, 234, 241);
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+h2 {
+    text-align: center;
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 25px;
+    animation: fadeIn 1s ease forwards; 
+}
+
+h3 {
+    text-align: right;
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 45px; 
+    animation: fadeIn 1s ease forwards;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    width: calc(25% - 20px); 
+    margin: 10px 0; 
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    text-decoration: none;
+}
+
+.card-content h2 {
+    margin-top: 0;
+    color:black;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+.newsletter {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.newsletter input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.newsletter input[type="submit"]:hover {
+    background-color: #555;
+}
+.dropdown-symbol {
+        font-size: 10px; 
+        vertical-align: middle;
+        padding-left: 5px; 
+}
+.card-expanded {
+    width: 100%;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.card-expanded img {
+    width: auto;
+    height: 90%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 15%;
+    margin-right: 3%;
+    border-radius: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+.expanded-nav button {
+    z-index: 2;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.expanded-nav button:hover {
+    background-color: #555;
+}
+.upload-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.upload-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#imageUploadForm {
+    margin-top: 10px;
+}
+
+#imageInput {
+    display: none; /* Hide the input field */
+}
+
+#imageInput + label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#imageInput + label:hover {
+    background-color: #555;
+}
+
+#imageInput + label:after {
+    content: '';
+}
+
+#imageInput:focus + label,
+#imageInput:valid + label {
+    background-color: #555;
+}
+
+button[type="submit"] {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+.custom-file-upload {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.custom-file-upload:hover {
+    background-color: #555;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="HorizonHues.html" class="nav-brand">Horizon Hues</a>
+    <a href="HorizonHues.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <div class="dropdown">
+        <a href="destinations.html" class="dropbtn">Destinations<span class="dropdown-symbol">      v</span></a>
+
+        <div class="dropdown-content">
+            <a href="india.html">INDIA</a>
+            <a href="aus.html">AUSTRALIA</a>
+            <a href="usa.html">UNITED STATES OF AMERICA</a>
+            <a href="sl.html">SRI-LANKA</a>
+            <a href="jp.html">JAPAN</a>
+            <a href="uk.html">UNITED KINGDOM</a>
+            <a href="chn.html">CHINA</a>
+            <a href="ger.html">GERMANY</a>
+            <a href="rus.html">RUSSIA</a>
+        </div>
+    </div>
+    <a href="gallery.html">Gallery</a>
+    <a href="#">Contact</a>
+</nav>
+
+<header id="slideshow">
+    <div class="header-content">
+        <h1 class="animate-heading">Gallery</h1>
+    </div>
+</header>
+<section class="container">
+    <div class="card" onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/12/DSCF8595_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/12/DSCF8595_gal1.jpg" alt="Image 1">
+    </div>
+    <div class="card" onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/10/EDIT01_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/10/EDIT01_gal1.jpg" alt="Image 2">
+    </div>
+    <div class="card" onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2023/10/DSCF2851_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2023/10/DSCF2851_gal1.jpg" alt="Image 3">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF6046_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF6046_gal1.jpg" alt="Image 2">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9947_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9947_gal1.jpg" alt="Image 2">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9940_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9940_gal1.jpg" alt="Image 2">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9928_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9928_gal1.jpg" alt="Image 2">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9867_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9867_gal1.jpg" alt="Image 2">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9810_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9810_gal1.jpg" alt="Image 2">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2023/11/DSCF9786_gal1-2.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2023/11/DSCF9786_gal1-2.jpg" alt="Image 2">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9787_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9787_gal1.jpg" alt="Image 2">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2023/11/DSCF9762_gal1-2.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2023/11/DSCF9762_gal1-2.jpg" alt="Image 2">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9720_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9720_gal1.jpg" alt="Image 2">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9600_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9600_gal1.jpg" alt="Image 2">
+    </div>
+    <div class="card"  onclick="expandImage('https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9397_gal1.jpg')">
+        <img src="https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF9397_gal1.jpg" alt="Image 2">
+    </div>
+
+    <!-- Add more cards as needed -->
+</section>
+<div id="expandedCard" class="card-expanded" style="display: none;">
+    <span class="close-button" onclick="closeExpandedCard()">&times;</span>
+    <img id="expandedImage" src="" alt="Expanded Image">
+    <div class="expanded-nav">
+        <button onclick="showPreviousImage()">Previous</button>
+        <button onclick="showNextImage()">Next</button>
+    </div>
+</div>
+<section class="upload-section">
+    <h2>Upload Your Journey Images</h2>
+    <form id="imageUploadForm" enctype="multipart/form-data">
+        <input type="file" name="image" id="imageInput" accept="image/*" required style="display: none;">
+        <label for="imageInput" id="imageInputLabel" class="custom-file-upload">
+            Upload
+        </label>
+    </form>
+</section>
+<footer>
+    <p>&copy; 2024 Horizon Hues. All rights reserved.</p>
+</footer>
+
+<script>
+    document.getElementById('imageUploadForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    const formData = new FormData();
+    const imageFile = document.getElementById('imageInput').files[0];
+    formData.append('image', imageFile);
+
+    // Send the image data to the server using fetch or XMLHttpRequest
+    // Example using fetch:
+    fetch('upload_endpoint', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            // Image uploaded successfully
+            console.log('Image uploaded successfully');
+            // You can update the UI or display a success message here
+        } else {
+            // Error uploading image
+            console.error('Error uploading image');
+            // You can update the UI or display an error message here
+        }
+    })
+    .catch(error => {
+        console.error('Error uploading image:', error);
+        // You can update the UI or display an error message here
+    });
+});
+</script>
+<script>
+    let image = [
+        'https://theworldtravelguy.com/wp-content/uploads/2022/12/DSCF8595_gal1.jpg',
+        'https://theworldtravelguy.com/wp-content/uploads/2022/10/EDIT01_gal1.jpg',
+        'https://theworldtravelguy.com/wp-content/uploads/2023/10/DSCF2851_gal1.jpg'
+    ];
+    function expandImage(imageUrl) {
+        const expandedCard = document.getElementById('expandedCard');
+        const expandedImage = document.getElementById('expandedImage');
+        
+        expandedImage.src = imageUrl;
+        expandedCard.style.display = 'block';
+    }
+    
+    function closeExpandedCard() {
+        const expandedCard = document.getElementById('expandedCard');
+        expandedCard.style.display = 'none';
+    }
+    function showPreviousImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        const expandedImage = document.getElementById('expandedImage');
+        expandedImage.src = image[currentIndex];
+    }
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        const expandedImage = document.getElementById('expandedImage');
+        expandedImage.src = image[currentIndex];
+    }
+    </script>
+
+<script>
+const header = document.getElementById('slideshow');
+const images = ['https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF6562_gal1.jpg', 'https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF5146_gal1.jpg', 'https://theworldtravelguy.com/wp-content/uploads/2022/10/DSCF3261_gal1.jpg']; 
+let currentIndex = 0;
+
+function changeBackground() {
+    header.style.backgroundImage = `url('${images[currentIndex]}')`;
+    currentIndex = (currentIndex + 1) % images.length;
+}
+
+setInterval(changeBackground, 3000); 
+</script>
+
+</body>
+</html>
