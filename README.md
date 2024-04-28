@@ -8,6 +8,8 @@ Gallery Section: Indulge your visual senses with a curated gallery of high-quali
 Newsletter Section: Stay updated with the latest travel trends, destination spotlights, and exclusive offers by subscribing to our newsletter.
 
 ## Technologies Used
-Frontend: HTML5, CSS3, JavaScript
-Backend: Node.js, Express.js
-Database: Firebase
+Frontend: HTML5, CSS3, JavaScript.
+
+Backend: Node.js, Express.js.
+
+Database: Firebase.
